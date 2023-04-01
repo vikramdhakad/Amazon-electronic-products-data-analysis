@@ -1,0 +1,34 @@
+# 1. Top rated a product on amazon ever.
+
+select category from  amazon.electronics
+order by rating desc
+limit 10;
+
+# 2. who is more shopping on amazon, male or female?
+
+select model_attr, count(model_attr) as count from amazon.electronics
+group by model_attr
+order by count desc
+limit 1;
+
+# 3. Which year had done more sales on amazon?
+
+select year from amazon.electronics
+group by year
+order by year desc
+limit 1;
+
+# 4. Which brand is more sales on 2018?
+
+select brand, count(brand) as count from amazon.electronics
+where year = 2018
+order by count desc;
+
+# 5. Which item is more sales?
+
+select category, count(category) as count from amazon.electronics
+group by category
+order by count desc
+limit 5;
+
+ 
